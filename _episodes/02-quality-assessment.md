@@ -29,11 +29,13 @@ $ pwd
 Checking to make sure we have the Raw files for the workshop.
 
 ```bash
-
 $ ls
-RNA_seq ...
-
 ```
+
+~~~
+RNA_seq . ..
+~~~
+{: .output}
 
 Creating a directory where to store the QC data:
 
@@ -74,7 +76,7 @@ $ fastqc -o QC/ Raw/*
 ```
 You will see an automatically updating output message telling you the progress of the analysis. It will start like this:
 
-```
+~~~
 Started analysis of SRR014335-chr1.fastq
 Approx 5% complete for SRR014335-chr1.fastq
 Approx 10% complete for SRR014335-chr1.fastq
@@ -83,18 +85,21 @@ Approx 20% complete for SRR014335-chr1.fastq
 Approx 25% complete for SRR014335-chr1.fastq
 Approx 30% complete for SRR014335-chr1.fastq
 Approx 35% complete for SRR014335-chr1.fastq
-
-```
+~~~
+{: .output}
 
 The FastQC program has created several new files within our RNA_seq/QC/ directory.
 
 ```bash
 $ ls QC
+```
+
+~~~
 SRR014335-chr1_fastqc.html  SRR014336-chr1_fastqc.zip   SRR014339-chr1_fastqc.html  SRR014340-chr1_fastqc.zip
 SRR014335-chr1_fastqc.zip   SRR014337-chr1_fastqc.html  SRR014339-chr1_fastqc.zip   SRR014341-chr1_fastqc.html
 SRR014336-chr1_fastqc.html  SRR014337-chr1_fastqc.zip   SRR014340-chr1_fastqc.html  SRR014341-chr1_fastqc.zip
-
-```
+~~~
+{: .output}
 
 ## Viewing the FastQC results
 
@@ -113,12 +118,11 @@ $ mkdir -p ~/Desktop/fastqc_html
 ```
 
 ```bash
-
 $ scp -r [Your_UserName]p@login.mahuika.nesi.org.nz:~/RNA_seq/QC/ ~/Desktop/fastqc_html
 
 ```
 
-![](https://github.com/foreal17/RNA-seq-workshop/blob/master/Prep_Files/Images/fqc1_2.png)
+![](../fig/fqc1_2.png)
 
 ## Working with the FastQC text output
 Now that we’ve looked at our HTML reports to get a feel for the data, let’s look more closely at the other output files. Go back to the tab in your terminal program that is connected to NeSI and make sure you’re in our results subdirectory.
@@ -127,44 +131,45 @@ Now that we’ve looked at our HTML reports to get a feel for the data, let’s 
 $ cd /home/fayfa80p/RNA_seq/QC
 
 $ ls
+```
+
+~~~
 SRR014335-chr1_fastqc.html  SRR014336-chr1_fastqc.zip   SRR014339-chr1_fastqc.html  SRR014340-chr1_fastqc.zip
 SRR014335-chr1_fastqc.zip   SRR014337-chr1_fastqc.html  SRR014339-chr1_fastqc.zip   SRR014341-chr1_fastqc.html
 SRR014336-chr1_fastqc.html  SRR014337-chr1_fastqc.zip   SRR014340-chr1_fastqc.html  SRR014341-chr1_fastqc.zip
+~~~
+{: .output}
 
-```
 Let's unzip the files to look at the FastQC text file outputs.
 
-```
-
+```bash
 $ for filename in *.zip
 > do
 > unzip $filename
 > done
-
 ```
 
 Inside each unzipped folder, there is a summary text which shows results of the statistical tests done by FastQC
 
-```
+```bash
 $ ls SRR014335-chr1_fastqc
-fastqc_data.txt  fastqc.fo  fastqc_report.html	Icons/	Images/  summary.txt
-
 ```
+
+~~~
+fastqc_data.txt  fastqc.fo  fastqc_report.html	Icons/	Images/  summary.txt
+~~~
+{: .output}
 
 Use less to preview the summary.txt file
 
-```
-
+```bash
 $ less SRR014335-chr1_fastqc/summary.txt
-
 ```
 
 We can make a record of the results we obtained for all our samples by concatenating all of our summary.txt files into a single file using the cat command. We’ll call this fastqc_summaries.txt.
 
-```
-
+```bash
 $ cat */summary.txt > ~/RNA_seq/QC/fastqc_summaries.txt 
-
 ```
 
 * Have a look at the fastqc_summaries.txt and search for any of the samples that have failed the QC statistical tests.
@@ -177,26 +182,23 @@ $ cat */summary.txt > ~/RNA_seq/QC/fastqc_summaries.txt
  different software packages) across multipel samples.
  - To generate `multqc` results, run the following command in the directory with the output files you want to summarise (e.g., fastqc reports generated above):
  
-```{bash, eval=FALSE}
-
+```bash
 $ module load MultiQC/1.9-gimkl-2020a-Python-3.8.2
-
 $ cd ~/RNA_seq/
-
 $ mkdir MultiQC
-
 $ cd MultiQC
-
 $ cp ../QC/* ./
-
 $ multiqc .
-
 $ ls -F
-multiqc_data/  multiqc_report.html
-
 ```
+
+~~~
+multiqc_data/  multiqc_report.html
+~~~
+{: .output}
+
 The html report shows the MultiQC summary
 
-![Alt text](https://github.com/foreal17/RNA-seq-workshop/blob/master/Prep_Files/Images/MQC1.png)
+![Alt text](../fig/MQC1.png)
 
 {% include links.md %}

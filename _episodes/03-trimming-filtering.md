@@ -34,7 +34,6 @@ from FASTQ files.
 - The following syntax will remove the adapter sequence AACCGGTT from the file SRR014335-chr1.fastq, create a new file called SRR014335-chr1_trimmed.fastq, and write a summary to the log file SRR014335-chr1.log:
 
 ```bash
-
 $ pwd
 /home/[Your_Username]/RNA_seq
 
@@ -43,14 +42,12 @@ $ mkdir Trimmed
 $ module load cutadapt/2.10-gimkl-2020a-Python-3.8.2
 
 $ cutadapt -q 20 -a AACCGGTT -o Trimmed/SRR014335-chr1_cutadapt.fastq Raw/SRR014335-chr1.fastq > Trimmed/SRR014335-chr1.log
-
 ```
+
 We can have a look at the log file to see what cutadapt has done.
 
 ```bash
-
 $ less Trimmed/SRR014335-chr1.log
-
 ```
 
 Now we should trim all samples.
@@ -59,13 +56,18 @@ Now we should trim all samples.
 $ cd Raw
 
 $ ls
-SRR014335-chr1.fastq  SRR014336-chr1.fastq  SRR014337-chr1.fastq  SRR014339-chr1.fastq  SRR014340-chr1.fastq  SRR014341-chr1.fastq
+```
 
+~~~
+SRR014335-chr1.fastq  SRR014336-chr1.fastq  SRR014337-chr1.fastq  SRR014339-chr1.fastq  SRR014340-chr1.fastq  SRR014341-chr1.fastq
+~~~
+{: .output}
+
+```bash
 $ for filename in *.fastq
 > do base=$(basename ${filename} .fastq)
 > cutadapt -q 20 -a AACCGGTT -o ../Trimmed/${base}.trimmed.fastq ${filename} > ../Trimmed/${base}.log
 > done
-
 ```
 
 ---
@@ -75,15 +77,13 @@ $ for filename in *.fastq
  - If the log files from `cutadapt` are added to the directory containing the FastQC output, this information will also be incorporated into the MultiQC report the next time it is run.
  
 ```bash
-
 $ cd ../MultiQC
  
 $ cp ../Trimmed/*log .
 
 $ multiqc .
-
 ```
-![Alt text](https://github.com/foreal17/RNA-seq-workshop/blob/master/Prep_Files/Images/MQC2.png)
 
+![Alt text](../fig/MQC2.png)
 
 {% include links.md %}

@@ -45,30 +45,32 @@ Mik Black & Ngoni Faya
 
 ## Getting organised
 
-### Create an RStudio project
-
-**NOTE: skip to the next section (“Count Data”) if you are working
-within Jupyter on NeSI**
-
-One of the first benefits we will take advantage of in RStudio is
-something called an RStudio Project. An RStudio project allows you to
-more easily:
-
--   Save data, files, variables, packages, etc. related to a specific
-    analysis project
--   Restart work where you left off
--   Collaborate, especially if you are using version control such as
-    git.
-
-To create a project:
-
--   Open RStudio and go to the File menu, and click New Project.
--   In the window that opens select Existing Project, and browse to the
-    RNA\_seq folder.
--   Finally, click Create Project.
-
-*Save source from untitled to `yeast_data.R` and continue saving
-regularly as you work.*
+> **NOTE: skip to the next section (“Count Data”) if you are working
+> within Jupyter on NeSI**
+> ### Create an RStudio project
+>
+> 
+>
+> One of the first benefits we will take advantage of in RStudio is
+> something called an RStudio Project. An RStudio project allows you to
+> more easily:
+>
+> -   Save data, files, variables, packages, etc. related to a specific
+>    analysis project
+> -   Restart work where you left off
+> -   Collaborate, especially if you are using version control such as
+>     git.
+>
+> To create a project:
+> 
+> -   Open RStudio and go to the File menu, and click New Project.
+> -   In the window that opens select Existing Project, and browse to the
+>     RNA\_seq folder.
+> -   Finally, click Create Project.
+> 
+> *Save source from untitled to `yeast_data.R` and continue saving
+> regularly as you work.*
+{: .callout}
 
 ### Count data
 
@@ -84,6 +86,7 @@ fcData = read.table('yeast_counts_all_chr.txt', sep='\t', header=TRUE)
 fcData %>% head()
 ```
 
+~~~
     ##      Geneid Chr Start   End Strand Length ...STAR.SRR014335.Aligned.out.sam
     ## 1   YDL248W  IV  1802  2953      +   1152                                52
     ## 2 YDL247W-A  IV  3762  3836      +     75                                 0
@@ -112,6 +115,8 @@ fcData %>% head()
     ## 4                                 0
     ## 5                                 4
     ## 6                                19
+~~~
+{: .output}
 
 Check dimensions:
 
@@ -119,18 +124,24 @@ Check dimensions:
 dim(fcData)
 ```
 
+~~~
     ## [1] 7127   12
+~~~
+{: .output}
 
-``` r
+```r
 names(fcData)
 ```
 
+~~~
     ##  [1] "Geneid"                            "Chr"                              
     ##  [3] "Start"                             "End"                              
     ##  [5] "Strand"                            "Length"                           
     ##  [7] "...STAR.SRR014335.Aligned.out.sam" "...STAR.SRR014336.Aligned.out.sam"
     ##  [9] "...STAR.SRR014337.Aligned.out.sam" "...STAR.SRR014339.Aligned.out.sam"
     ## [11] "...STAR.SRR014340.Aligned.out.sam" "...STAR.SRR014341.Aligned.out.sam"
+~~~
+{: .output}
 
 Rename data columns to reflect group membership
 
@@ -140,6 +151,7 @@ names(fcData)[7:12] = c("WT1", "WT2", "WT3", "MT1", "MT2", "MT3")
 fcData %>% head()
 ```
 
+~~~
     ##      Geneid Chr Start   End Strand Length WT1 WT2 WT3 MT1 MT2 MT3
     ## 1   YDL248W  IV  1802  2953      +   1152  52  46  36  65  70  78
     ## 2 YDL247W-A  IV  3762  3836      +     75   0   0   0   0   1   0
@@ -147,6 +159,9 @@ fcData %>% head()
     ## 4   YDL246C  IV  8683  9756      -   1074   0   0   1   1   2   0
     ## 5   YDL245C  IV 11657 13360      -   1704   0   3   0   5   7   4
     ## 6   YDL244W  IV 16204 17226      +   1023   6   6   5  20  30  19
+~~~
+{: .output}
+
 
 Extract count data
 
@@ -159,6 +174,7 @@ rownames(counts) = fcData$Geneid
 counts %>% head()
 ```
 
+~~~
     ##           WT1 WT2 WT3 MT1 MT2 MT3
     ## YDL248W    52  46  36  65  70  78
     ## YDL247W-A   0   0   0   0   1   0
@@ -166,6 +182,9 @@ counts %>% head()
     ## YDL246C     0   0   1   1   2   0
     ## YDL245C     0   3   0   5   7   4
     ## YDL244W     6   6   5  20  30  19
+~~~
+{: .output}
+
 
 #### Visualising the data
 
@@ -175,7 +194,7 @@ Data are highly skewed (suggests that logging might be useful):
 boxplot(as.matrix(counts) ~ col(counts))
 ```
 
-![](rnaseq-diffexp_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![Boxplot of counts](../fig/05-boxplot-counts.png)
 
 Some genes have zero counts:
 
@@ -183,8 +202,12 @@ Some genes have zero counts:
 colSums(counts==0)
 ```
 
+~~~
     ## WT1 WT2 WT3 MT1 MT2 MT3 
     ## 562 563 573 437 425 435
+~~~
+{: .output}
+
 
 Log transformation (add 0.5 to avoid log(0) issues):
 
@@ -198,7 +221,7 @@ Now we can see the per-sample distributions more clearly:
 boxplot(as.matrix(logCounts) ~ col(logCounts))
 ```
 
-![](rnaseq-diffexp_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+!["Boxplot of log(counts)"](../fig/05-boxplot-logcounts.png)
 
 Density plots are also a good way to visualise the data:
 
@@ -207,14 +230,18 @@ lineColour <- c("blue", "blue", "blue", "red", "red", "red")
 lineColour
 ```
 
+~~~
     ## [1] "blue" "blue" "blue" "red"  "red"  "red"
+~~~
+{: .output}
+
 
 ``` r
 plot(density(logCounts[,1]), ylim=c(0,0.3), col=lineColour[1])
 for(i in 2:ncol(logCounts)) lines(density(logCounts[,i]), col=lineColour[i])
 ```
 
-![](rnaseq-diffexp_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![Density plot of counts](../fig/05-counts-density.png)
 
 The boxplots and density plots show clear differences between the sample
 groups - are these biological, or experimental artifacts? (often we
@@ -237,8 +264,12 @@ account.
 colSums(counts)
 ```
 
+~~~
     ##     WT1     WT2     WT3     MT1     MT2     MT3 
     ## 4915975 4892227 4778158 4618409 4719413 4554283
+~~~
+{: .output}
+
 
 Visualise via bar plot
 
@@ -246,7 +277,7 @@ Visualise via bar plot
 colSums(counts) %>% barplot(., ylab="Reads mapped per sample")
 ```
 
-![](rnaseq-diffexp_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![Bar plot of reads mapped per sample](../fig/05-counts-barplot.png)
 
 *Now we are ready for differential expression analysis*
 
@@ -259,7 +290,7 @@ But first, lets take a brief aside, and talk about the process of
 detecting genes that have undergone a statistically significance change
 in expression between the two groups.
 
-**GO BACK TO THE README PAGE, AND OPEN UP THE PDF DOCUMENT**
+**[OPEN UP THIS PDF DOCUMENT](../files/lecture_differential_expression.pdf)**
 
 ------------------------------------------------------------------------
 
@@ -285,10 +316,14 @@ options(width=100)
 head(logCPM, 3)
 ```
 
+~~~
     ##                  WT1        WT2        WT3        MT1        MT2        MT3
     ## YDL248W    3.7199528  3.5561232  3.2538405  3.6446399  3.7156488  3.9155366
     ## YDL247W-A -0.6765789 -0.6765789 -0.6765789 -0.6765789 -0.3140297 -0.6765789
     ## YDL247W    0.1484688  0.6727144  0.1645731  0.7843936  1.0395626  0.6349276
+~~~
+{: .output}
+
 
 #### Aside: RPKM
 
@@ -306,6 +341,7 @@ rpkmData <- rpkm(dge, geneLengths)
 rpkmData %>% round(., 2) %>% head()
 ```
 
+~~~
     ##             WT1  WT2  WT3   MT1   MT2   MT3
     ## YDL248W   10.89 9.66 7.73 10.30 10.85 12.55
     ## YDL247W-A  0.00 0.00 0.00  0.00  2.35  0.00
@@ -313,6 +349,9 @@ rpkmData %>% round(., 2) %>% head()
     ## YDL246C    0.00 0.00 0.23  0.17  0.33  0.00
     ## YDL245C    0.00 0.43 0.00  0.54  0.73  0.44
     ## YDL244W    1.41 1.42 1.21  3.57  5.24  3.44
+~~~
+{: .output}
+
 
 ``` r
 range(rpkmData, na.rm=TRUE)
@@ -330,7 +369,7 @@ for(i in 1:ncol(rpkmData)){
 }
 ```
 
-![](rnaseq-diffexp_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+!["RPKM vs log(CPM)"](../fig/05-rpkm.png)
 
 **We’re NOT going to use RPKM data here. I just wanted to show you how
 to calculate it, and how it relates to the logCPM data**
@@ -350,6 +389,7 @@ conds <- c("WT","WT","WT","MT","MT","MT")
 t.test(logCPM[6,] ~ conds)
 ```
 
+~~~
     ## 
     ##  Welch Two Sample t-test
     ## 
@@ -361,23 +401,26 @@ t.test(logCPM[6,] ~ conds)
     ## sample estimates:
     ## mean in group MT mean in group WT 
     ##         2.244310         1.001943
+~~~
+{: .output}
+
 
 ``` r
 beeswarm(logCPM[6,] ~ conds, pch=16, ylab="Expression (logCPM)", xlab="Group",
          main=paste0(rownames(logCPM)[6], ": MT vs WT"))
 ```
 
-![](rnaseq-diffexp_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![Beeswarm plot WT vs MT](../fig/05-beeswarm.png)
 
--   we basically want to do this sort of analysis, for every gene
--   we’ll use a slightly more sophisticated approach though
+- we basically want to do this sort of analysis, for every gene
+- we’ll use a slightly more sophisticated approach though
 
 However, before we get to statistical testing, we (might) first need to
 do a little bit more normalisation.
 
 ### Limma: voom
 
--   The “voom” function estimates relationship between the mean and the
+- The “voom” function estimates relationship between the mean and the
     variance of the logCPM data, normalises the data, and creates
     “precision weights” for each observation that are incorporated into
     the limma analysis.
@@ -387,6 +430,7 @@ design <- model.matrix(~conds)
 design
 ```
 
+~~~
     ##   (Intercept) condsWT
     ## 1           1       1
     ## 2           1       1
@@ -399,14 +443,15 @@ design
     ## attr(,"contrasts")
     ## attr(,"contrasts")$conds
     ## [1] "contr.treatment"
+~~~
+{: .output}
+
 
 ``` r
 v <- voom(dge, design, plot=TRUE)
 ```
 
-![](rnaseq-diffexp_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
-
-<!-- ![Alt text](https://github.com/foreal17/RNA-seq-workshop/blob/master/Prep_Files/Images/Voom_Mean_Variance.png) -->
+![Voom: mean-variance trend](../fig/05-voom.png)
 
 #### Voom: impact on samples
 
