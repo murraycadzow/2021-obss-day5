@@ -47,10 +47,14 @@ Evaluating your data quality and extracting biologically relevant information is
 ![](../fig/RNA_seq_workshopflow.png)
 
 > ## Exercise
-> - Rank genes based on expression?
-> - Identify differentially expressed genes after inducing a drug
-> - Identify Novel transcripts
-> - Identify bacterial and eukaryotic genes in a sample
+> Discussion: possible uses of RNA-seq.
+> 
+>> ## Solution
+>>  - Rank genes based on expression
+>> - Identify differentially expressed genes after inducing a drug
+>> - Identify Novel transcripts
+>> - Identify bacterial and eukaryotic genes in a sample
+>> - Others?
 {: .challenge}
 
 
