@@ -1,11 +1,13 @@
 ---
 title: "Workshop Overview"
-teaching: 0
-exercises: 0
+teaching: 30
+exercises: 10
 questions:
-- "Key question (FIXME)"
+- "What is RNA-seq?"
+- "What data will we be using in this workshop?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Understand the basics of RNA-seq, from sample collection through to data generation."
+- "Learn a little bit about teh yeast data set being used in this session." 
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
@@ -62,10 +64,12 @@ This workshop uses the dataset from yeast RNA-seq experiment, <a href="https://j
 - Subset of data (chromosome 1)
 - Six samples (3 WT / 3 MT)
 - Single end sequencing
+
 * * *
 
 ### Overview of Illumina Sequencing
 Here is a <a href="https://www.youtube.com/watch?v=womKfikWlxM">video</a> to illumina sequencing.
+
 * * *
 
 ---
