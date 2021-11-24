@@ -1,5 +1,5 @@
 ---
-title: "Differential expression"
+title: "Differential Expression"
 teaching: 75
 exercises: 0
 questions:
