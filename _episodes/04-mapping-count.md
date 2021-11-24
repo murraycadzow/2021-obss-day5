@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Align reads to reference genome."
 - "Assess read mapping for each sample."
-- "Generate per-sample count data for each genomic feature (e.g., genes, exons etc) that you are interested in.
+- "Generate per-sample count data for each genomic feature (e.g., genes, exons etc) that you are interested in."
 keypoints:
 - "Alignment and feature counting are used to generate read counts for each genomic feature (e.g., genes) of interest, per sample."
 - "The count data can then be used for stataistical analysis (e.g., to identify differentially expressed genes)."
