@@ -6,11 +6,11 @@ questions:
 - "How do we turn fastq data into read counts?"
 objectives:
 - "Align reads to reference genome."
-- "Assess raed mapping for each sample."
+- "Assess read mapping for each sample."
 - "Generate per-sample count data for each genomic feature (e.g., genes, exons etc) that you are interested in.
 keypoints:
 - "Alignment and feature counting are used to generate read counts for each genomic feature (e.g., genes) of interest, per sample."
-- "The count data can then be used for stataistical analysis (e.g., to identify differentially expressed genes."
+- "The count data can then be used for stataistical analysis (e.g., to identify differentially expressed genes)."
 ---
 
 
