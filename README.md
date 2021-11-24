@@ -27,6 +27,11 @@ Current maintainers of this lesson are
 * [Mik Black](https://github.com/mikblack)
 * [Ngoni Faya](https://github.com/foreal17)
 
+## Attribution notice
+  
+- The material used to prepare for the workshop was extracted from Assoc. Prof. Michael Black lectures for Stat435 course.
+
+- Some code used in this workshop has been extracted from a collection of presentations, workshops and lectures by Prof. Thomas Girke, Institute for Integrative Genome Biology, UC Riverside: <a href="http://girke.bioinformatics.ucr.edu/">Link_1</a> and <a href="http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/MCBIOS2015/Rrnaseq/Rrnaseq.pdf">Link_2</a>
 
 ## Authors
 
