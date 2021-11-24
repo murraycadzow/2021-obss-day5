@@ -1,21 +1,23 @@
 ---
 title: "Differential expression"
-teaching: 0
+teaching: 75
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How can we identify genes which exhibit changes in expresion between experimental conditions?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Understand pre-processing steps required for standarising count data."
+- "Use count data and the limma package to perform normalisation and identify differentially expressed genes."
+- "Understand need for multiple comparisons correction, and be able to apply FWER and FDR correction methods."
+- "Explore alternative methods (egdeR and DESeq2) for identifying differentially expressed genes.
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Statistical analysis is required to identify genes exhibiting altered expression between experimental conditions."
+- "The limma processing pipeline is a fairly standard (and robust) way to do this."
+- "DESeq2 and edgeR offer alternative methods for identifying differetially expressed genes."
 ---
 
 
 RNA-seq data analysis in R
 ================
-Mik Black & Ngoni Faya
-
-8 September 2021
 
 ## RNA-seq: overview
 
