@@ -1,13 +1,16 @@
 ---
 title: "Map and count reads"
-teaching: 0
+teaching: 45
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How do we turn fastq data into read counts?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Align reads to reference genome."
+- "Assess raed mapping for each sample."
+- "Generate per-sample count data for each genomic feature (e.g., genes, exons etc) that you are interested in.
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Alignment and feature counting are used to generate read counts for each genomic feature (e.g., genes) of interest, per sample."
+- "The count data can then be used for stataistical analysis (e.g., to identify differentially expressed genes."
 ---
 
 
