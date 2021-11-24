@@ -8,7 +8,7 @@ objectives:
 - "Understand pre-processing steps required for standarising count data."
 - "Use count data and the limma package to perform normalisation and identify differentially expressed genes."
 - "Understand need for multiple comparisons correction, and be able to apply FWER and FDR correction methods."
-- "Explore alternative methods (egdeR and DESeq2) for identifying differentially expressed genes.
+- "Explore alternative methods (egdeR and DESeq2) for identifying differentially expressed genes."
 keypoints:
 - "Statistical analysis is required to identify genes exhibiting altered expression between experimental conditions."
 - "The limma processing pipeline is a fairly standard (and robust) way to do this."
