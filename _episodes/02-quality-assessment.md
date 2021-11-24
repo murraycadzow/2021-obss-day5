@@ -1,6 +1,6 @@
 ---
 title: "Quality control of the sequencing data."
-teaching: 0
+teaching: 30
 exercises: 0
 questions:
 - "What tools do we use to assess the data quality data in RNA-seq experiments?"
