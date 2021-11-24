@@ -1,13 +1,14 @@
 ---
 title: "Trimming and Filtering reads"
-teaching: 0
+teaching: 30
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What steps are required for basic data cleaning in RNA-seq studies?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Understand the various data cleaning steps for RNA-seq data."
+- "Learn how to perfrorm adapter removal and quality trimming."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Adapter removal and trimming (optional) are important steps in processign RNA-seq data."
 ---
 
 # Cleaning Reads
