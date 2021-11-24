@@ -15,10 +15,6 @@ keypoints:
 - "DESeq2 and edgeR offer alternative methods for identifying differetially expressed genes."
 ---
 
-
-RNA-seq data analysis in R
-================
-
 ## RNA-seq: overview
 
 ### Recap
