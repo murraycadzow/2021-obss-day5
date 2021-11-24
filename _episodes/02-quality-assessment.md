@@ -3,16 +3,15 @@ title: "Quality control of the sequencing data."
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What tools do we use to assess the data quality data in RNA-seq experiments?"
 objectives:
-- "Assess the quality of your data"
-- "Use FastQC package to do quality check"
-- "Use MultiQC to view our analysis results"
+- "Learn how to assess data quality"
+- "Use the FastQC application to perform quality assessment"
+- "Use the MultiQC application to combine and view quality information"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Quality assessmet is a key initial step in the analysis of RNA-seq data"
+- "The FastQC and MultiQC applications are useful tools for quality assessent of RNA-seq data."
 ---
-
-
 
 Several tools available to do quality assessemnt. For this workshop, we will use `fastqc`.
 
