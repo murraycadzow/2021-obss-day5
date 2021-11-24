@@ -57,6 +57,7 @@ Evaluating your data quality and extracting biologically relevant information is
 >> - Investigate alternative splicing and isoform usage
 >> - *De novo* transcriptome assembly
 >> - Others?
+> {: .solution}
 {: .challenge}
 
 
