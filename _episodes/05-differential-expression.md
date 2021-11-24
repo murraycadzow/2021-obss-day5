@@ -70,6 +70,12 @@ keypoints:
 > regularly as you work.*
 {: .callout}
 
+### Lecture notes
+
+In addition to the code below, we'll also be going through some lecture notes that explain the various concepts being covered in this part of thw workshop.
+
+Notes: [lecture_annotation_pathways.pdf](https://github.com/murraycadzow/2021-obss-day5/raw/gh-pages/files/lecture_differential_expression.pdf)
+
 ### Count data
 
 Note: I have now aligned the data for ALL CHROMOSOMES and generated
