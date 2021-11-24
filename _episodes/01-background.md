@@ -9,7 +9,8 @@ objectives:
 - "Understand the basics of RNA-seq, from sample collection through to data generation."
 - "Learn a little bit about teh yeast data set being used in this session." 
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "RNA-seq is a commonly used technology for profiling the transcriptome."
+- "There are a number of different applications for RNA-seq data - we'll be looking at detecetign differentially expressed genes using data from an experiment involving RNA-seq data from yeast."
 ---
 
 
