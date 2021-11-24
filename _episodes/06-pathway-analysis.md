@@ -1,18 +1,18 @@
 ---
 title: "Overrepresentation analysis (Gene Ontology)"
-teaching: 0
+teaching: 60
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How can we identify changes in biological mechanisms (e.g., pathways) in gene expression studies?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Gain basic understanding of Gene Ontology."
+- "Understand how over-representation analysis works for collections of genes."
+- "Gain insight into the need for gene-length adjustment when performing over-representation analysis with RNA-seq data."
+- "Use the GOseq methodology to identify gene-set changes based on Gene Ontology groups."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Coordinated changes in groups of functionally related genes can tell us about the underlying biological mechanisms that changing between exprimental conditions."
+- "The characteristics of RNA-seq experiments mean that gene-length correction is required, to avoid standard approaches to over-representation analysis givign erroneous results."
 ---
-
-RNA-seq data analysis in R
-================
-Mik Black & Ngoni Faya<br>8 September 2021
 
 ### Overrepresentation analysis (Gene Ontology)
 
