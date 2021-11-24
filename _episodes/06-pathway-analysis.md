@@ -14,6 +14,12 @@ keypoints:
 - "The characteristics of RNA-seq experiments mean that gene-length correction is required, to avoid standard approaches to over-representation analysis givign erroneous results."
 ---
 
+### Lecture notes
+
+In addition to the code below, we’ll also be going through some lecture notes that explain the various concepts being covered in this part of thw workshop.
+
+Lecture notes (PDF): [Annotation and Pathways](https://github.com/murraycadzow/2021-obss-day5/raw/gh-pages/files/lecture_annotation_pathways.pdf)
+
 ### Overrepresentation analysis (Gene Ontology)
 
 Over Representation Analysis
