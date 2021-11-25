@@ -9,7 +9,9 @@ This workshop is designed to be run on the NeSI compute infrastructure.
 In order to run the workshop on your own computer you will need to ensure you installed:
 
 - A UNIX shell such as BASH
+    - [install instructions](https://carpentries.github.io/workshop-template/#setup)
 - R and RStudio
+    - [install instructions](https://carpentries.github.io/workshop-template/#setup)
 - R packages
   - `dplyr`
   - `limma`
