@@ -120,7 +120,7 @@ $ mkdir -p ~/Desktop/fastqc_html
 ```
 
 ```bash
-$ scp -r [Your_UserName]p@login.mahuika.nesi.org.nz:~/RNA_seq/QC/ ~/Desktop/fastqc_html
+$ scp -r [Your_UserName]p@login.mahuika.nesi.org.nz:~/obss_2021/RNA_seq/QC/ ~/Desktop/fastqc_html
 
 ```
 
@@ -130,7 +130,7 @@ $ scp -r [Your_UserName]p@login.mahuika.nesi.org.nz:~/RNA_seq/QC/ ~/Desktop/fast
 Now that we’ve looked at our HTML reports to get a feel for the data, let’s look more closely at the other output files. Go back to the tab in your terminal program that is connected to NeSI and make sure you’re in our results subdirectory.
 
 ```bash
-$ cd /home/fayfa80p/RNA_seq/QC
+$ cd /home/fayfa80p/obss_2021/RNA_seq/QC
 
 $ ls
 ```
@@ -171,7 +171,7 @@ $ less SRR014335-chr1_fastqc/summary.txt
 We can make a record of the results we obtained for all our samples by concatenating all of our summary.txt files into a single file using the cat command. We’ll call this fastqc_summaries.txt.
 
 ```bash
-$ cat */summary.txt > ~/RNA_seq/QC/fastqc_summaries.txt 
+$ cat */summary.txt > ~/obss_2021/RNA_seq/QC/fastqc_summaries.txt 
 ```
 
 * Have a look at the fastqc_summaries.txt and search for any of the samples that have failed the QC statistical tests.
@@ -186,7 +186,7 @@ $ cat */summary.txt > ~/RNA_seq/QC/fastqc_summaries.txt
  
 ```bash
 $ module load MultiQC/1.9-gimkl-2020a-Python-3.8.2
-$ cd ~/RNA_seq/
+$ cd ~/obss_2021/RNA_seq/
 $ mkdir MultiQC
 $ cd MultiQC
 $ cp ../QC/* ./

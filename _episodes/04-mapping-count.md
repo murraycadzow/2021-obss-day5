@@ -46,7 +46,7 @@ $ module load HISAT2/2.2.0-gimkl-2020a
 $ hisat2-build -p 4 -f Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa Saccharomyces_cerevisiae.R64-1-1.dna.toplevel
 
 #list what is in the directory:
-$ ls /home/[Your_Username]/RNA_seq/Genome
+$ ls /home/[Your_Username]/obss_2021/RNA_seq/Genome
 ```
 
 ~~~
