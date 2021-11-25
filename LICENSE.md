@@ -5,8 +5,14 @@ root: .
 ---
 ## Instructional Material
 
-All Software Carpentry, Data Carpentry, and Library Carpentry instructional material is
-made available under the [Creative Commons Attribution
+The instructional material was developed and licensed by Mik Black, University of Otago, and is made available under the [Creative Commons Attribution
+license][cc-by-human]. The following is a human-readable summary of
+(and not a substitute for) the [full legal text of the CC BY 4.0
+license][cc-by-legal].
+
+Some code used in this workshop has been extracted from a collection of presentations, workshops and lectures by Prof. Thomas Girke, Institute for Integrative Genome Biology, UC Riverside: <a href="http://girke.bioinformatics.ucr.edu/">Link_1</a> and <a href="http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/MCBIOS2015/Rrnaseq/Rrnaseq.pdf">Link_2</a>
+
+The [style template](https://github.com/carpentries/lesson-example) is created and licenced by The Carpentries and made available under the [Creative Commons Attribution
 license][cc-by-human]. The following is a human-readable summary of
 (and not a substitute for) the [full legal text of the CC BY 4.0
 license][cc-by-legal].
