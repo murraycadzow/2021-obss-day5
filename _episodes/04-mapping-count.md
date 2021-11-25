@@ -314,4 +314,9 @@ Since we now have all the count data in one file, we need to transfer it to our 
 $ scp fayfa80p@login.mahuika.nesi.org.nz:/home/fayfa80p/RNA_seq/Counts/yeast_counts_all_chr.txt ./
 ```
 
+> ## Download with Jupyter
+> An alternative is to navigate to the directory `~/obss_2021/RNA_seq/Counts/` in the navigation panel of Jupyter
+> then right-click on `yeast_counts_all_chr.txt` and select "Download"
+{: .callout}
+
 {% include links.md %}
