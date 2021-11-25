@@ -28,10 +28,10 @@ To be able to map (align) sequencing reads on the genome, the genome needs to be
 Note for speed reason, the reads will be aligned on the chr5 of the mouse genome.
 
 ```bash
-$ cd /home/[Your_Username]/RNA_seq/Genome
+$ cd /home/[Your_Username]/obss_2021/RNA_seq/Genome
 
 #to list what is in your directory:
-$ ls /home/[Your_Username]/RNA_seq/Genome
+$ ls /home/[Your_Username]/obss_2021/RNA_seq/Genome
 ```
 
 ~~~
