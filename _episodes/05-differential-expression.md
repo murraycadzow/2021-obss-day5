@@ -72,7 +72,7 @@ keypoints:
 
 ### Lecture notes
 
-In addition to the code below, we'll also be going through some lecture notes that explain the various concepts being covered in this part of thw workshop.
+In addition to the code below, we'll also be going through some lecture notes that explain the various concepts being covered in this part of the workshop.
 
 Lecture notes (PDF): [Differential Expression](https://github.com/murraycadzow/2021-obss-day5/raw/gh-pages/files/lecture_differential_expression.pdf)
 
@@ -83,6 +83,12 @@ counts, so we are working with data from all 7127 genes.
 
 *Let’s look at our data set and perform some basic checks before we do a
 differential expression analysis.*
+
+> ## Working directory in Jupyter
+> Before launching your R notebook in Jupyter, navigate to `~/obss_2021/RNA_seq/` in the navigation panel.
+> Ensure your working directory by using `getwd()` and if it isn't `~/obss_2021/RNA_seq/`, set it with
+> `setwd('~/obss_2021/RNA_seq')`.
+{: .callout}
 
 ``` r
 library(dplyr)
