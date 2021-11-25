@@ -23,6 +23,9 @@ $ pwd
 /home/[your_username]
 # good I am ready to work
 
+cd ~/obss_2021/
+# copy the needed data into your directory
+cp -r /nesi/projects/nesi02659/obss_2021/Resources/RNA_seq/ .
 ```
 
 Checking to make sure we have the Raw files for the workshop.
@@ -32,7 +35,7 @@ $ ls
 ```
 
 ~~~
-RNA_seq . ..
+edna gbs genomic_dna intro_bash intro_r RNA_seq . ..
 ~~~
 {: .output}
 

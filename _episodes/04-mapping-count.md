@@ -245,7 +245,7 @@ $ samtools flagstat SRR014335-chr1_sorted.bam
  - The HISAT2 output data can also be incorporated into the MultiQC report the next time it is run.
  
  ```bash
- $ cd ~/RNA_seq/MultiQC
+ $ cd ~/obss_2021/RNA_seq/MultiQC
  
  $ cp ../Mapping/*summary* ./
  
@@ -277,7 +277,7 @@ You can process all the samples at once:
 $ module load Subread
 
 $ pwd
-/home/[Your_Username]/RNA_seq
+/home/[Your_Username]/obss_2021/RNA_seq
 
 $ mkdir Counts
 
