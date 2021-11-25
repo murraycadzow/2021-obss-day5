@@ -142,7 +142,7 @@ SRR014335-chr1.fastq  SRR014336-chr1.fastq  SRR014337-chr1.fastq  SRR014339-chr1
 {: .output}
 
 ```bash
-$ for filename in *
+$ for filename in *.trimmed.fastq
 > do
 > base=$(basename ${filename} .trimmed.fastq)
 > hisat2 -p 4 -x ../Genome/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel -U $filename -S ../Mapping/${base}.sam --summary-file ../Mapping/${base}_summary.txt
