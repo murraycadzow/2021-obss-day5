@@ -113,7 +113,7 @@ $ pwd
 ```
 
 ~~~
-/home/[Your_Username]/RNA_seq/
+/home/[Your_Username]/obss_2021/RNA_seq/
 ~~~
 {: .output}
 
